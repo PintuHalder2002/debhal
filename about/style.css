@@ -1,0 +1,418 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(135deg, #004aad, #007bff);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+}
+
+.header h1,
+.header p {
+  opacity: 0;
+ 
+}
+
+/* Left Side Text Animation */
+.animated-text-left {
+  position: relative;
+  animation: slideInLeft 2s forwards;
+}
+
+/* Right Side Text Animation */
+.animated-text-right {
+  position: relative;
+  animation: slideInRight 2s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* About Us Section */
+.about-section {
+  padding: 80px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-content {
+  width: 50%;
+  padding-right: 100px;
+  animation: slideUp 2s ease;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  color: #004aad;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-weight: 600;
+
+}
+
+.about-img {
+  width: 45%;
+}
+
+.about-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  animation: zoomIn 1.5s ease;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.founders-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+}
+
+.founders-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.founder-card {
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.founder-card:hover {
+  transform: translateY(-10px);
+}
+
+.founder-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.founders-section h1{
+  margin-bottom: 30px;
+  color: #004aad;
+  font-weight: 800;
+}
+.founders-section h3 {
+  margin: 10px 0 5px;
+  font-size: 1.4em;
+  color: #121111;
+  font-weight: 500;
+}
+
+.founders-section p {
+  color: #555353;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .founders-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .founder-card {
+    width: 80%;
+  }
+}
+
+@media (min-width: 769px) {
+  .founder-card {
+    width: 250px;
+  }
+}
+
+
+
+
+.founder-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.founder-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content,
+  .about-img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .about-img {
+    margin-top: 30px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+}
+
+/* Tablets and Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content,
+  .about-img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .about-img {
+    margin-top: 30px;
+  }
+
+  .header h1 {
+    font-size: 40px;
+  }
+
+  .header p {
+    font-size: 18px;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+}
+
+/* Desktops and Large Screens */
+@media (min-width: 1025px) and (max-width: 2284.8px) {
+  .about-section {
+    flex-direction: row;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-right: 15px;
+    padding-right: 15px;
+  }
+
+  .about-img {
+    width: 45%;
+    /* margin-left: 300px; */
+  }
+
+  .header h1 {
+    font-size: 48px;
+  }
+
+  .header p {
+    font-size: 20px;
+  }
+
+  .about-content h2 {
+    font-size: 36px;
+  }
+
+  .about-content p {
+    font-size: 18px;
+  }
+}
+
+/* Responsive Design for Founder Section */
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .founder-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-details,
+  .founder-img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .founder-img {
+    margin-bottom: 20px;
+  }
+
+  .circle-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .founder-details h2 {
+    font-size: 28px;
+  }
+
+  .founder-details p {
+    font-size: 16px;
+  }
+}
+
+/* Tablets and Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .founder-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-details,
+  .founder-img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .founder-img {
+    margin-bottom: 30px;
+  }
+
+  .circle-img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .founder-details h2 {
+    font-size: 32px;
+  }
+
+  .founder-details p {
+    font-size: 18px;
+  }
+}
+
+/* Desktops and Large Screens */
+@media (min-width: 1025px) {
+  .founder-content {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .founder-img {
+    width: 30%;
+  }
+
+  .founder-details {
+    width: 60%;
+    padding-left: 30px;
+  }
+
+  .circle-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .founder-details h2 {
+    font-size: 36px;
+  }
+
+  .founder-details p {
+    font-size: 18px;
+  }
+}
